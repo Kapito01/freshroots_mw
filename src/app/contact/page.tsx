@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <main>
+    <main id="main-content">
       <PageIntro
         eyebrow="Contact Freshroots"
         title="Let's start a conversation."

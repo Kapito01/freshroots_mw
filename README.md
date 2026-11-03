@@ -43,9 +43,16 @@ npm run build
 - Website scope: docs/WEBSITE_REQUIREMENTS.md
 - Client assets and content checklist: docs/CONTENT_REQUIREMENTS.md
 
+## Project structure
+
+- `src/app/` — routes (App Router), global styles and design tokens (`globals.css`).
+- `src/components/` — shared components (header, footer, `ButtonLink`, `SectionHeading`, `PhotoFrame`).
+- `src/components/home/` — homepage sections, in the order defined in `docs/DESIGN_SYSTEM.md`.
+- `src/content/` — site and homepage copy, navigation and image references, kept separate from presentation.
+
 ## Important content and imagery note
 
-The first homepage uses temporary Unsplash imagery for layout development. It does not represent Freshroots' actual farms or facilities. Replace it with client-approved Freshroots photography before launch.
+The homepage uses temporary Unsplash imagery for layout development. It does not represent Freshroots' actual farms or facilities. Each placeholder is declared in `src/content/site.ts` with `placeholder: true`, which shows a visible "Placeholder image" label. Replace these with client-approved Freshroots photography (under `public/images/`) and set `placeholder: false` before launch.
 
 The current header monogram is a temporary typographic placeholder. Replace it with the original approved Freshroots logo asset when supplied.
 
