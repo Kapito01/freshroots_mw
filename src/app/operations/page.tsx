@@ -25,7 +25,7 @@ export default function OperationsPage() {
             </div>
             <div className="prose-block">
               <p>
-                Rice is one of Freshroots' main crops. The company is focused
+                Rice is one of Freshroots&apos; main crops. The company is focused
                 on producing quality crops and will share further details
                 about varieties, growing practices, harvest periods and supply
                 as these are confirmed.
