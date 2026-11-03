@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <main>
+    <main id="main-content">
       <PageIntro
         eyebrow="About Freshroots"
         title="Grounded in agriculture. Looking ahead."

@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 export default function CorporateSupplyPage() {
   return (
-    <main>
+    <main id="main-content">
       <PageIntro
         eyebrow="Corporate supply"
         title="A conversation about agricultural supply starts here."
@@ -36,7 +36,7 @@ export default function CorporateSupplyPage() {
               appropriate business contact channel.
             </p>
             <Link className="button button--forest" href="/contact">
-              Contact Freshroots <span aria-hidden="true">↗</span>
+              Contact Freshroots <span aria-hidden="true">→</span>
             </Link>
           </div>
         </div>

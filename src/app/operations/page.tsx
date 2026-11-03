@@ -9,14 +9,14 @@ export const metadata: Metadata = {
 
 export default function OperationsPage() {
   return (
-    <main>
+    <main id="main-content">
       <PageIntro
         eyebrow="Our operations"
         title="Growing quality crops."
         description="Rice and maize are at the centre of Freshroots' current farming activities. This page will grow as more details about the farms and production operations are approved for publication."
       />
 
-      <section className="section section--white">
+      <section className="section section--white anchor-target" id="rice">
         <div className="container">
           <div className="intro-grid">
             <div>
@@ -35,7 +35,7 @@ export default function OperationsPage() {
         </div>
       </section>
 
-      <section className="section">
+      <section className="section anchor-target" id="maize">
         <div className="container">
           <div className="intro-grid">
             <div>

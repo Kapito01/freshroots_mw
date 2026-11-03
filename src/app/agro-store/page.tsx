@@ -27,7 +27,7 @@ const plannedCategories = [
 
 export default function AgroStorePage() {
   return (
-    <main>
+    <main id="main-content">
       <PageIntro
         eyebrow="Freshroots Agro-Store"
         title="Practical supplies for agricultural work."
