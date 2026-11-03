@@ -62,7 +62,11 @@ Full e-commerce checkout, online payments, inventory synchronisation, customer a
 - The client-provided Instagram profile identifies Freshroots as an integrated agribusiness focused on producing quality crops and shows Mzuzu / Nkhata Bay as profile location text. Confirm exact public-facing location wording with the client before publishing.
 
 ## 7. Skills and workflow
-- Before implementation, inspect available skills relevant to frontend design, Next.js, accessibility, SEO, testing and code review. Read the skill instructions and apply them.
+- Project skills live in `.claude/skills/<skill-name>/SKILL.md` and are part of the repository mandate.
+- Invoke/read `freshroots-brand` when changing brand, visual design, imagery or public messaging.
+- Invoke/read `freshroots-frontend` when implementing routes, components, styling, navigation or forms.
+- Invoke/read `freshroots-quality` after meaningful implementation milestones and before calling work complete.
+- Also inspect any available installed skills relevant to frontend design, Next.js, accessibility, SEO, testing and code review. Read the skill instructions and apply them.
 - Do not claim a skill was used unless its instructions were actually read and applied.
 - For each meaningful milestone: implement, run relevant lint/typecheck/build/tests, fix issues and summarise results.
 - If a command cannot be run in the current environment, say so explicitly rather than claiming success.
