@@ -54,12 +54,12 @@ export default function AboutPage() {
             <article className="pillar">
               <p className="pillar-index">01 / PRODUCTION</p>
               <h3>Rice</h3>
-              <p>Freshroots' main crop and a central part of its agricultural focus.</p>
+              <p>Freshroots&apos; main crop and a central part of its agricultural focus.</p>
             </article>
             <article className="pillar">
               <p className="pillar-index">02 / PRODUCTION</p>
               <h3>Maize</h3>
-              <p>Grown alongside rice as part of Freshroots' farming activity.</p>
+              <p>Grown alongside rice as part of Freshroots&apos; farming activity.</p>
             </article>
             <article className="pillar">
               <p className="pillar-index">03 / PLANNED</p>

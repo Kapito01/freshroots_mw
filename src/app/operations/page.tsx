@@ -25,7 +25,7 @@ export default function OperationsPage() {
           </div>
           <div className="split-grid__body prose-block">
             <p>
-              Rice is Freshroots' primary crop and the core of its current
+              Rice is Freshroots&apos; primary crop and the core of its current
               farming activity. The business is focused on producing quality
               crops.
             </p>
