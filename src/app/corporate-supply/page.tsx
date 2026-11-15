@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { PageIntro } from "@/components/page-intro";
+import { EnquiryForm } from "@/components/enquiry-form";
 
 export const metadata: Metadata = {
   title: "Corporate Supply",
   description:
-    "Connect with Freshroots Malawi to discuss agricultural supply and business partnership opportunities.",
+    "Prepare a corporate enquiry about rice, maize or agricultural partnership opportunities with Freshroots Malawi.",
 };
 
 export default function CorporateSupplyPage() {
@@ -14,31 +14,30 @@ export default function CorporateSupplyPage() {
       <PageIntro
         eyebrow="Corporate supply"
         title="A conversation about agricultural supply starts here."
-        description="Freshroots welcomes conversations with businesses and organisations interested in rice, maize and agricultural partnership opportunities."
+        description="Freshroots welcomes enquiries from organisations interested in discussing rice, maize and potential business partnerships."
       />
+
       <section className="section section--white">
-        <div className="container intro-grid">
-          <div>
-            <span className="eyebrow">Business enquiries</span>
-            <h2>Tell us what your organisation is looking for.</h2>
-          </div>
-          <div className="prose-block">
-            <p>
-              Corporate buyers, wholesalers, distributors and institutions
-              can connect with Freshroots to discuss their requirements.
-              Details such as quantities, specifications, packaging and
-              delivery arrangements should be confirmed directly with the
-              business.
+        <div className="container enquiry-layout">
+          <div className="enquiry-layout__aside">
+            <p className="eyebrow">For organisations</p>
+            <h2 className="display-heading">Share the requirements behind your enquiry.</h2>
+            <p className="body-large">
+              Corporate buyers, wholesalers, distributors, food processors,
+              retailers and institutions can use this enquiry builder to
+              organise the details of their request.
             </p>
-            <p>
-              Official procurement contact details and a structured
-              quotation process will be added once Freshroots confirms the
-              appropriate business contact channel.
-            </p>
-            <Link className="button button--forest" href="/contact">
-              Contact Freshroots <span aria-hidden="true">→</span>
-            </Link>
+            <div className="enquiry-guidance">
+              <h3>Useful details to include</h3>
+              <ul className="rule-list rule-list--light">
+                <li>Crop or area of interest</li>
+                <li>Estimated quantity, if known</li>
+                <li>Required specifications, if known</li>
+                <li>Destination and timing, if known</li>
+              </ul>
+            </div>
           </div>
+          <EnquiryForm mode="corporate" />
         </div>
       </section>
     </main>

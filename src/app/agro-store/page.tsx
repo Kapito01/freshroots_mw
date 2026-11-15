@@ -1,64 +1,70 @@
 import type { Metadata } from "next";
 import { PageIntro } from "@/components/page-intro";
+import { EnquiryForm } from "@/components/enquiry-form";
+import { catalogueCategories } from "@/content/catalogue";
 
 export const metadata: Metadata = {
   title: "Agro-Store",
   description:
-    "Discover the upcoming Freshroots Malawi agricultural supplies store.",
+    "Explore the planned Freshroots Malawi agricultural supplies categories, including fertilizers, crop protection, protective clothing and equipment.",
 };
-
-const plannedCategories = [
-  {
-    title: "Fertilizers",
-    description:
-      "Agricultural nutrients and soil-support products for farming needs.",
-  },
-  {
-    title: "Protective gear",
-    description:
-      "Protective clothing and equipment for people working in agriculture.",
-  },
-  {
-    title: "Farming essentials",
-    description:
-      "A planned range of useful supplies and equipment for agricultural work.",
-  },
-];
 
 export default function AgroStorePage() {
   return (
     <main id="main-content">
       <PageIntro
-        eyebrow="Freshroots Agro-Store"
+        eyebrow="Freshroots Agro-Store · Planned"
         title="Practical supplies for agricultural work."
-        description="Freshroots is preparing to expand into agricultural supplies, including fertilizers, protective gear and other farming essentials."
+        description="Freshroots is preparing an agricultural supplies store. Its planned range includes fertilizers, crop protection, protective clothing, safety equipment, tools and related essentials."
       />
 
       <section className="section section--white">
         <div className="container">
           <div className="section-heading">
-            <span className="eyebrow">Planned product categories</span>
-            <h2>Supporting the work behind every harvest.</h2>
+            <p className="eyebrow">Planned catalogue</p>
+            <h2>Categories under development.</h2>
             <p>
-              The Agro-Store is an upcoming part of Freshroots. Product
-              listings, specifications, prices and availability will be
-              published when confirmed.
+              The categories below reflect the planned direction of the
+              Agro-Store. Specific brands, product specifications, prices,
+              opening information and availability have not yet been
+              confirmed.
             </p>
           </div>
-          <div className="pillars-grid">
-            {plannedCategories.map((category, index) => (
-              <article className="pillar" key={category.title}>
-                <p className="pillar-index">0{index + 1} / CATEGORY</p>
+
+          <div className="catalogue-grid">
+            {catalogueCategories.map((category) => (
+              <article className="catalogue-item" id={category.id} key={category.id}>
+                <div className="catalogue-item__top">
+                  <span className="catalogue-item__number">{category.number}</span>
+                  <span className="catalogue-item__status">Planned category</span>
+                </div>
                 <h3>{category.title}</h3>
                 <p>{category.description}</p>
               </article>
             ))}
           </div>
-          <div className="notice" style={{ marginTop: "3rem" }}>
-            The store is presented as an upcoming business initiative. This
-            website does not currently offer online purchasing or confirm
-            product stock.
+
+          <div className="catalogue-note">
+            <p className="eyebrow">Availability</p>
+            <p>
+              This is a category preview, not a live inventory. No product is
+              represented as currently stocked or available to purchase.
+            </p>
           </div>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="container enquiry-layout">
+          <div className="enquiry-layout__aside">
+            <p className="eyebrow">Product enquiry</p>
+            <h2 className="display-heading">Looking for a particular supply?</h2>
+            <p className="body-large">
+              Prepare an enquiry with the category and product information
+              you need. Freshroots can confirm the range directly.
+            </p>
+          </div>
+          <EnquiryForm mode="agro-store" />
         </div>
       </section>
     </main>

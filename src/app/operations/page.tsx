@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import { PageIntro } from "@/components/page-intro";
+import { ButtonLink } from "@/components/button-link";
 
 export const metadata: Metadata = {
-  title: "Our Operations",
+  title: "Operations",
   description:
-    "Explore Freshroots Malawi's current agricultural focus on rice and maize production.",
+    "Explore Freshroots Malawi's current farming focus on rice and maize production.",
 };
 
 export default function OperationsPage() {
@@ -12,48 +13,59 @@ export default function OperationsPage() {
     <main id="main-content">
       <PageIntro
         eyebrow="Our operations"
-        title="Growing quality crops."
-        description="Rice and maize are at the centre of Freshroots' current farming activities. This page will grow as more details about the farms and production operations are approved for publication."
+        title="Two crops at the centre of our work."
+        description="Freshroots farms rice as its main crop and also grows maize. Further details about varieties, harvest periods and commercial supply will be published when verified."
       />
 
       <section className="section section--white anchor-target" id="rice">
-        <div className="container">
-          <div className="intro-grid">
-            <div>
-              <span className="eyebrow">01 / Rice</span>
-              <h2>A core part of our agricultural focus.</h2>
-            </div>
-            <div className="prose-block">
-              <p>
-                Rice is one of Freshroots&apos; main crops. The company is focused
-                on producing quality crops and will share further details
-                about varieties, growing practices, harvest periods and supply
-                as these are confirmed.
-              </p>
-            </div>
+        <div className="container split-grid">
+          <div>
+            <p className="eyebrow">01 / Main crop</p>
+            <h2 className="display-heading">Rice</h2>
+          </div>
+          <div className="split-grid__body prose-block">
+            <p>
+              Rice is Freshroots' primary crop and the core of its current
+              farming activity. The business is focused on producing quality
+              crops.
+            </p>
+            <p>
+              Crop varieties, production practices, harvest periods,
+              specifications and available quantities will be shared once
+              they have been confirmed by Freshroots.
+            </p>
+            <ButtonLink href="/corporate-supply" variant="text">Discuss rice supply</ButtonLink>
           </div>
         </div>
       </section>
 
       <section className="section anchor-target" id="maize">
-        <div className="container">
-          <div className="intro-grid">
-            <div>
-              <span className="eyebrow">02 / Maize</span>
-              <h2>Another important crop in our work.</h2>
-            </div>
-            <div className="prose-block">
-              <p>
-                Freshroots also farms maize. More information about the
-                operation, crop specifications and commercial availability
-                will be added after confirmation by the business.
-              </p>
-            </div>
+        <div className="container split-grid">
+          <div>
+            <p className="eyebrow">02 / Also grown</p>
+            <h2 className="display-heading">Maize</h2>
           </div>
-          <div className="notice" style={{ marginTop: "3rem" }}>
-            Production figures, locations, crop varieties and supply details
-            will only be published once they have been verified and approved
-            by Freshroots.
+          <div className="split-grid__body prose-block">
+            <p>
+              Freshroots also farms maize as part of its agricultural
+              activities in Malawi.
+            </p>
+            <p>
+              Further information about crop specifications, supply periods
+              and commercial availability will be published after the
+              business verifies and approves those details.
+            </p>
+            <ButtonLink href="/corporate-supply" variant="text">Discuss maize supply</ButtonLink>
+          </div>
+        </div>
+      </section>
+
+      <section className="section section--white">
+        <div className="container">
+          <div className="notice">
+            Production figures, acreage, locations, crop varieties,
+            certifications and supply details are not published here because
+            they have not yet been confirmed for public use.
           </div>
         </div>
       </section>

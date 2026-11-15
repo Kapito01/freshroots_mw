@@ -11,16 +11,17 @@ The site is designed around a minimal corporate experience, authentic agricultur
 - TypeScript
 - Tailwind CSS 4
 - ESLint
+- GitHub Actions quality workflow
 
 ## Requirements
 
-- Node.js 20.9 or later
-- npm (or another compatible package manager)
+- Node.js 20.9 or later (CI uses Node.js 24)
+- npm
 
 ## Getting started
 
 ```bash
-npm install
+npm ci
 npm run dev
 ```
 
@@ -34,26 +35,48 @@ npm run typecheck
 npm run build
 ```
 
+These three checks also run in GitHub Actions for pushes and pull requests.
+
+## Environment
+
+Create a `.env.local` file for local development when configuring a public production URL:
+
+```bash
+NEXT_PUBLIC_SITE_URL=https://your-approved-domain
+```
+
+Set `NEXT_PUBLIC_SITE_URL` to the final client-approved website URL in the deployment environment. Until then, the sitemap intentionally returns no entries rather than publishing incorrect localhost or placeholder URLs.
+
+## Enquiry experience
+
+The corporate supply, Agro-Store and contact forms currently prepare an enquiry message in the visitor's browser. The visitor can copy the prepared message and send it through the official Freshroots Instagram profile.
+
+- The forms do not send data to a server.
+- The website does not store enquiry details.
+- The interface does not claim that an enquiry has been submitted.
+- A verified business email address or approved form recipient/backend is required before enabling direct online submissions.
+
 ## Project guidance
 
-- Read the root CLAUDE.md before making changes.
-- Project-specific Claude Code skills are in the .claude/skills/ directory.
-- Brand direction: docs/BRAND_GUIDELINES.md
-- Design system: docs/DESIGN_SYSTEM.md
-- Website scope: docs/WEBSITE_REQUIREMENTS.md
-- Client assets and content checklist: docs/CONTENT_REQUIREMENTS.md
+- Read the root `CLAUDE.md` before making changes.
+- Project-specific Claude Code skills are in `.claude/skills/`.
+- Brand direction: `docs/BRAND_GUIDELINES.md`
+- Design system: `docs/DESIGN_SYSTEM.md`
+- Website scope: `docs/WEBSITE_REQUIREMENTS.md`
+- Client assets and content checklist: `docs/CONTENT_REQUIREMENTS.md`
 
 ## Project structure
 
-- `src/app/` — routes (App Router), global styles and design tokens (`globals.css`).
-- `src/components/` — shared components (header, footer, `ButtonLink`, `SectionHeading`, `PhotoFrame`).
-- `src/components/home/` — homepage sections, in the order defined in `docs/DESIGN_SYSTEM.md`.
-- `src/content/` — site and homepage copy, navigation and image references, kept separate from presentation.
+- `src/app/` — routes, SEO metadata routes and global styles.
+- `src/components/` — shared site components and enquiry builder.
+- `src/components/home/` — homepage sections.
+- `src/content/` — site copy, navigation and catalogue categories.
+- `.github/workflows/` — automated repository quality checks.
 
-## Important content and imagery note
+## Content and asset limitations
 
-The homepage uses temporary Unsplash imagery for layout development. It does not represent Freshroots' actual farms or facilities. Each placeholder is declared in `src/content/site.ts` with `placeholder: true`, which shows a visible "Placeholder image" label. Replace these with client-approved Freshroots photography (under `public/images/`) and set `placeholder: false` before launch.
+The homepage uses temporary Unsplash imagery for layout development. These images do not represent Freshroots' actual farms or facilities and are visibly labelled as placeholders. Replace them with client-approved photography before launch.
 
-The current header monogram is a temporary typographic placeholder. Replace it with the original approved Freshroots logo asset when supplied.
+The header monogram and generated social/favicon treatment are provisional typographic placeholders. Replace them with the original approved Freshroots logo asset when supplied.
 
-No production statistics, certifications, stock levels, prices, corporate partners or unconfirmed contact information are fabricated. The Agro-Store is presented as an upcoming initiative. E-commerce checkout and online payments are outside the initial release scope.
+No production statistics, certifications, stock levels, prices, corporate partners or unconfirmed contact information are fabricated. The Agro-Store is presented as a planned initiative and its categories are not represented as available products. E-commerce checkout, online payments, live inventory and customer accounts are outside V1 scope.
