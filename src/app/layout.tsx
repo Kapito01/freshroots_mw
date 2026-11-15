@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     type: "website",
     title: "Freshroots Malawi | Integrated Agribusiness",
     description:
-      "Growing quality crops and developing agricultural solutions in Malawi.",
+      "Freshroots Malawi is focused on producing quality crops, mainly rice and also maize.",
     siteName: "Freshroots Malawi",
   },
 };

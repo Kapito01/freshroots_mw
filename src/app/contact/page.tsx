@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { PageIntro } from "@/components/page-intro";
+import { EnquiryForm } from "@/components/enquiry-form";
+import { instagramUrl } from "@/content/site";
 
 export const metadata: Metadata = {
   title: "Contact",
-  description: "Connect with Freshroots Malawi through its official social channel.",
+  description:
+    "Prepare a message for Freshroots Malawi or visit its official Instagram profile.",
 };
 
 export default function ContactPage() {
@@ -13,32 +15,27 @@ export default function ContactPage() {
       <PageIntro
         eyebrow="Contact Freshroots"
         title="Let's start a conversation."
-        description="For updates and initial enquiries, connect with Freshroots through its official Instagram profile."
+        description="Use the enquiry builder to prepare a message, or connect with Freshroots through its official Instagram profile."
       />
+
       <section className="section section--white">
-        <div className="container intro-grid">
-          <div>
-            <span className="eyebrow">Connect with us</span>
-            <h2>Freshroots Malawi.</h2>
-          </div>
-          <div className="prose-block">
-            <p>
-              Follow Freshroots for updates about its agricultural activities
-              and upcoming developments.
+        <div className="container enquiry-layout">
+          <div className="enquiry-layout__aside">
+            <p className="eyebrow">Connect with Freshroots</p>
+            <h2 className="display-heading">A clear first step.</h2>
+            <p className="body-large">
+              For general questions, updates and initial conversations, visit
+              the official Freshroots Instagram profile.
             </p>
-            <Link
-              className="button button--forest"
-              href="https://www.instagram.com/freshroots_mw/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Visit Instagram <span aria-hidden="true">↗</span>
-            </Link>
-            <p className="notice" style={{ marginTop: "2rem" }}>
-              Business telephone, email and physical contact details will be
-              published after they are confirmed by Freshroots.
+            <a className="button button--outline" href={instagramUrl} target="_blank" rel="noreferrer">
+              Visit Freshroots on Instagram <span aria-hidden="true">↗</span>
+            </a>
+            <p className="form-footnote">
+              Business telephone, email and physical address details will
+              appear here once confirmed by Freshroots.
             </p>
           </div>
+          <EnquiryForm mode="contact" />
         </div>
       </section>
     </main>
